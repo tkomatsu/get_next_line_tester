@@ -1,4 +1,4 @@
-NAME := test_gnl
+NAME := test
 CC := gcc
 CFLAGS := -Wall -Werror -Wextra
 SRCDIR := ../

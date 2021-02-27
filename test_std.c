@@ -1,6 +1,6 @@
 #include <fcntl.h>
 #include <stdio.h>
-#include "get_next_line.h"
+#include "../get_next_line.h"
 
 #include <stdio.h>
 int	main()
@@ -21,6 +21,7 @@ int	main()
 		}
 		printf("[%d]: %s\n", ret, line);
 		free(line);
+		line = NULL;
 	}
 	close(fd);
 	free(line);
