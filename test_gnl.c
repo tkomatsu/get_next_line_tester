@@ -6,7 +6,7 @@
 /*   By: tkomatsu <tkomatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 20:45:32 by tkomatsu          #+#    #+#             */
-/*   Updated: 2021/02/27 12:23:36 by tkomatsu         ###   ########.fr       */
+/*   Updated: 2021/02/27 13:40:44 by tkomatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	check_gnl_file(char *src)
 	int		readvalue;
 
 	readvalue = 1;
+	line = NULL;
 	printf("* * * * * * TEST |%s| * * * * *\n", src);
 	fd = open(src, O_RDONLY);
 	while (readvalue > 0)
@@ -32,6 +33,7 @@ void	check_gnl_file(char *src)
 		readvalue = get_next_line(fd, &line);
 		printf("[%d]: %s\n", readvalue, line);
 		free(line);
+		line = NULL;
 	}
 	printf("* * * * * * END * * * * *\n\n");
 }

@@ -4,7 +4,7 @@ CFLAGS := -Wall -Werror -Wextra
 SRCDIR := ../
 SRCS := $(SRCDIR)get_next_line.c $(SRCDIR)get_next_line_utils.c
 BSRCS := $(SRCDIR)get_next_line_bonus.c $(SRCDIR)get_next_line_utils_bonus.c
-BUFSIZE := 11
+BUFSIZE := 1024
 BUFF := -D BUFFER_SIZE=$(BUFSIZE)
 TEST = test_gnl.c
 
@@ -21,7 +21,7 @@ bonus: $(TEST) $(BSRCS)
 	$(CC) $(CFLAGS) $(BUFF) -D BONUS -o $(NAME) $^
 
 debug: $(TEST) $(SRCS)
-	$(CC) $(BUFF) -g $(CFLAGS) -o $(NAME) $^
+	$(CC) $(BUFF) -D MANDATORY -g $(CFLAGS) -o $(NAME) $^
 
 clean:
 	rm -fr $(NAME)
